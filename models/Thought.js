@@ -69,10 +69,11 @@ const thoughtSchema = new Schema(
 // Helper method to format date for reactionSchema
 reactionSchema.methods.formatDate = function(date) {
   return date.toLocaleString(
-    'en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+    'en-US', 
+    { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
     }
   ); 
 };
