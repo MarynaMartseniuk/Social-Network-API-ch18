@@ -47,10 +47,11 @@ userSchema.virtual('friendCount').get(function () {
 //create User model
 const User = model('user', userSchema);
 
+// User seeds
 User.find()
   .exec()
   .then(async collection => {
-    // if (collection.length === 0) {
+    if (collection.length === 0) {
       const results = await User.insertMany(
         [
           { username: 'Sally',
@@ -71,8 +72,8 @@ User.find()
         ]
       );
       return console.log('Users inserted', results);
-    //}
-   // return console.log('Already populated');
+    }
+    return console.log('Already populated');
   })
   .catch(err => handleError(err));
 
