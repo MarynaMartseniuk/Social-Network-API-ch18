@@ -120,7 +120,7 @@ module.exports = {
         );
   
         if (!thought) {
-          return res.status(404).json({ message: 'No Thought with this id to add a reaction to!' });
+          return res.status(404).json({ message: 'No Thought found with this id to add a reaction to!' });
         }
   
         res.json(thought);
@@ -141,7 +141,7 @@ module.exports = {
         );
   
         if (!thought) {
-          return res.status(404).json({ message: 'No thought with this id to delete reaction from!' });
+          return res.status(404).json({ message: 'No thought found with this id to delete reaction from!' });
         }
   
         res.json(application);
