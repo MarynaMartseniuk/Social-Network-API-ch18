@@ -25,7 +25,6 @@ const userSchema = new Schema(
     friends: [
       {
         type: Schema.Types.ObjectId,
-        // ref: userSchema,
         ref: 'user'
       },
     ],
@@ -47,7 +46,7 @@ userSchema.virtual('friendCount').get(function () {
 //create User model
 const User = model('user', userSchema);
 
-// User seeds
+// User seeds. Got seeded if DB is emplty.
 User.find()
   .exec()
   .then(async collection => {
@@ -73,7 +72,7 @@ User.find()
       );
       return console.log('Users inserted', results);
     }
-    return console.log('Already populated');
+    return console.log('User Collection is already populated');
   })
   .catch(err => handleError(err));
 

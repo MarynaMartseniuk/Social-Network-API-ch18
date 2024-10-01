@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-//const reactionSchema = require('./Reacrion');
 
 // Schema to create Reaction model - subdocument
 const reactionSchema = new Schema(
@@ -98,5 +97,76 @@ thoughtSchema.virtual('reactionCount').get(function () {
 
 //create Thought model
 const Thought = model('thought', thoughtSchema);
+
+// User seeds. Got seeded if DB is emplty.
+Thought.find()
+  .exec()
+  .then(async collection => {
+    if (collection.length === 0) {
+      const results = await Thought.insertMany(
+        [
+          { thoughtText: 'Follow the white rabbit',
+            username: 'Matt',
+            reactions: [
+              // {
+              //   reactionBody: 'like it!',
+              //   username: 'Owen'
+              // },
+              // {
+              //   reactionBody: 'What do you mean?',
+              //   username: 'Sally'
+              // },
+            ] 
+           },
+           { thoughtText: 'Matrix is cool!',
+            username: 'Owen',
+            reactions: [
+              // {
+              //   reactionBody: 'agree!',
+              //   username: 'Matt'
+              // },
+              // {
+              //   reactionBody: 'I still can not get you, gyus :(',
+              //   username: 'Sally'
+              // },
+            ] 
+           },
+           { thoughtText: 'I can code!!!',
+            username: 'Matt',
+            reactions: [
+              // {
+              //   reactionBody: 'Geate!',
+              //   username: 'Owen'
+              // },
+              // {
+              //   reactionBody: 'Congrats!!! :)))))',
+              //   username: 'Sally'
+              // },
+              // {
+              //   reactionBody: 'Keep working! Do not stop!',
+              //   username: 'Owen'
+              // },
+            ] 
+           },
+           { thoughtText: 'I am working on a new project!',
+            username: 'Sally',
+            reactions: [
+              // {
+              //   reactionBody: 'Cool! Can I join?',
+              //   username: 'Matt'
+              // },
+              // {
+              //   reactionBody: 'What is ir about?',
+              //   username: 'Owen'
+              // },
+            ] 
+           },
+        ]
+      );
+      return console.log('Thoughts inserted', results);
+    }
+    return console.log('Thought Collection is already populated');
+  })
+  .catch(err => handleError(err));
 
 module.exports = {Thought};
