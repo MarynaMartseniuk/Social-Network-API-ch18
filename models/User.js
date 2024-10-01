@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const thoughtSchema = require('./Thought');
+const thoughtModel = require('./Thought');
 
 // Schema to create User model
 const userSchema = new Schema(
@@ -19,13 +19,13 @@ const userSchema = new Schema(
     thoughts: [
       {
       type: Schema.Types.ObjectId,
-      ref: thoughtSchema,
+      ref: thoughtModel,
+      // ref: 'thought'
       },
     ],  
     friends: [
       {
         type: Schema.Types.ObjectId,
-        // ref: userSchema,
         ref: 'user'
       },
     ],
@@ -47,7 +47,7 @@ userSchema.virtual('friendCount').get(function () {
 //create User model
 const User = model('user', userSchema);
 
-// User seeds
+// User seeds. Got seeded if DB is emplty.
 User.find()
   .exec()
   .then(async collection => {
@@ -73,7 +73,7 @@ User.find()
       );
       return console.log('Users inserted', results);
     }
-    return console.log('Already populated');
+    return console.log('User Collection is already populated');
   })
   .catch(err => handleError(err));
 
