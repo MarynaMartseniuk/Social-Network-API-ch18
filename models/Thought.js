@@ -72,7 +72,9 @@ reactionSchema.methods.formatDate = function(date) {
     { 
       year: 'numeric', 
       month: 'long', 
-      day: 'numeric' 
+      day: 'numeric', 
+      hour: '2-digit', 
+      minute: '2-digit' 
     }
   ); 
 };
@@ -83,9 +85,9 @@ thoughtSchema.methods.formatDate = function(date) {
     'en-US', { 
     year: 'numeric', 
     month: 'long', 
-    day: 'numeric' 
-    // hour: '2-digit', 
-    // minute: '2-digit' 
+    day: 'numeric', 
+    hour: '2-digit', 
+    minute: '2-digit' 
     }
   ); 
 };
@@ -169,4 +171,4 @@ Thought.find()
   })
   .catch(err => handleError(err));
 
-module.exports = {Thought};
+module.exports = Thought;

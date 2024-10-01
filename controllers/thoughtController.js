@@ -1,11 +1,12 @@
-const { ObjectId } = require('mongoose').Types;
-const { Thought } = require('../models');
+// const { ObjectId } = require('mongoose').Types;
+const { Thought, User } = require('../models');
 
 module.exports = {
     // Get all thoughts
     async getThoughts(req, res) {
       try {
-        const thoughts = await Thought.find();
+        const thoughts = await Thought.find()
+        .select('-__v');
   
         res.json(thoughts);
       } catch (err) {
@@ -34,9 +35,25 @@ module.exports = {
     // create a new thought
     async createThought(req, res) {
       try {
+        //create a thought
         const thought = await Thought.create(req.body);
-        res.json(thought);
+
+        //add thought ID to the User (to thoghts ID array)
+        const user = await User.findOneAndUpdate(
+          { username: req.body.username },
+          { $addToSet: { thoughts: thought._id } },
+          { new: true }
+        );
+  
+        if (!user) {
+          return res.status(404).json({
+            message: 'Thought created, but found no user with that ID',
+          })
+        }
+  
+        res.json('a new Thought was created and added to the User');
       } catch (err) {
+        console.log(err);
         res.status(500).json(err);
       }
     },
@@ -49,16 +66,15 @@ module.exports = {
           { $set: req.body },
           { 
             runValidators: true, 
-            new: true }
+            new: true 
+          }
         );
   
-        if (!user) {
-          return res.status(404).json({
-            message: 'No thought with that ID to update',
-          })
+        if (!thought) {
+          return res.status(404).json({ message: 'No Thought with this id to update!' });
         }
   
-        res.json(user);
+        res.json(thought);
       } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -68,15 +84,28 @@ module.exports = {
     // delete a thought
     async deleteThought(req, res) {
       try {
-        const thought = await User.findOneAndDelete({ _id: req.params.thoughtId });
+        // delete a thought by ID from Thought model
+        const thought = await Thought.findOneAndRemove({ _id: req.params.thoughtId });
   
         if (!thought) {
-          return res.status(404).json({ message: 'No thought with that ID to delete' });
+          return res.status(404).json({ message: 'No Thought with this id to delete!' });
+        }
+        
+        // find a user with thought ID in thughts array from URL and then delete this thought from this array (update User model so it will not have refference to deleted thought)
+        const user = await User.findOneAndUpdate(
+          { thoughts: req.params.thoughtId },
+          { $pull: { thoughts: req.params.thoughtId } },
+          { new: true }
+        );
+  
+        if (!user) {
+          return res.status(404).json({
+            message: 'Thought was deleted but no user with this thought id!',
+          });
         }
   
-        res.json({ message: 'Thought successfully deleted' });
+        res.json({ message: 'Thought successfully deleted!' });
       } catch (err) {
-        console.log(err);
         res.status(500).json(err);
       }
     },
