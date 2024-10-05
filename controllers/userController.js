@@ -6,7 +6,7 @@ module.exports = {
       try {
         const users = await User.find()
         .select('-__v');
-  
+   
         res.json(users);
       } catch (err) {
         console.log(err);
@@ -86,7 +86,7 @@ module.exports = {
       try {
         const user = await User.findOneAndUpdate(
           { _id: req.params.userId },
-          { $addToSet: { friends: { _id: req.params.friendId } } },
+          { $addToSet: { friends: { _id: req.body.friendId } } },
           { 
             runValidators: true, 
             new: true 

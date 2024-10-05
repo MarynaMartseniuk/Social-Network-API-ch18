@@ -1,4 +1,4 @@
-// const { ObjectId } = require('mongoose').Types;
+//const { ObjectId } = require('mongoose').Types;
 const { Thought, User } = require('../models');
 
 module.exports = {
@@ -7,8 +7,9 @@ module.exports = {
       try {
         const thoughts = await Thought.find()
         .select('-__v');
-  
-        res.json(thoughts);
+
+        //console.log(thoughts[0].createdAt, typeof thoughts[0].createdAt);
+         res.json(thoughts);
       } catch (err) {
         console.log(err);
         return res.status(500).json(err);
@@ -25,7 +26,7 @@ module.exports = {
           return res.status(404).json({ message: 'No thought with that ID' })
         }
   
-        res.json(user);
+        res.json(thought);
       } catch (err) {
         console.log(err);
         return res.status(500).json(err);
@@ -85,7 +86,7 @@ module.exports = {
     async deleteThought(req, res) {
       try {
         // delete a thought by ID from Thought model
-        const thought = await Thought.findOneAndRemove({ _id: req.params.thoughtId });
+        const thought = await Thought.findOneAndDelete({ _id: req.params.thoughtId });
   
         if (!thought) {
           return res.status(404).json({ message: 'No Thought with this id to delete!' });
