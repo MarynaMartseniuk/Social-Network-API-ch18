@@ -38,31 +38,31 @@
 ### run the App will look like this:
 1. GET all users:
    
-![GET all users:]()
+![GET all users:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/usersGET.jpg)
 
 2. GET one user:
    
-![GET one user:]()
+![GET one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/oneUserGET.jpg)
 
 3. POST (add) one user:
    
-![PUT (update) one user:]()
+![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPOST.jpg)
 
-4. PUT (update) one user:
+4. POST (add) a freind to one user:
    
-![PUT (update) one user:]()
-
-5. DELETE one user:
+![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendPOST.jpg)
     
-![DELETE one user:]()
+5.  DELETE one friend from one user:
+    
+![DELETE one friend from one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendDELETE.jpg)
 
-6. POST (add) a freind to one user:
+6. PUT (update) one user:
    
-![PUT (update) one user:]()
+![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPUT.jpg)
+
+7. DELETE one user:
     
-7.  DELETE one friend from one user:
-    
-![DELETE one friend from one user:]()
+![DELETE one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userDELETE.jpg)
 
 ## Credits
 1. bootcamp UofU, module # 18, activities ## 13, 23, 26, 28
