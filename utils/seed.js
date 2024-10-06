@@ -91,7 +91,7 @@ Thought.find()
               username: 'Matt'
             },
             {
-              reactionBody: 'What is ir about?',
+              reactionBody: 'What is it about?',
               username: 'Owen'
             },
           ] 
