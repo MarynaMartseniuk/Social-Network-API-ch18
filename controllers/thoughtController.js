@@ -145,7 +145,7 @@ module.exports = {
           return res.status(404).json({ message: 'No thought found with this id to delete reaction from!' });
         }
   
-        res.json(application);
+        res.json(thought);
       } catch (err) {
         res.status(500).json(err);
       }
