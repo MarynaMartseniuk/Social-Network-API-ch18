@@ -44,7 +44,7 @@ module.exports = {
           { username: req.body.username },
           { $addToSet: { thoughts: thought._id } },
           { new: true }
-        );
+        ).select('-__v');
   
         if (!user) {
           return res.status(404).json({
@@ -69,7 +69,7 @@ module.exports = {
             runValidators: true, 
             new: true 
           }
-        );
+        ).select('-__v');
   
         if (!thought) {
           return res.status(404).json({ message: 'No Thought with this id to update!' });
@@ -118,7 +118,7 @@ module.exports = {
           { _id: req.params.thoughtId },
           { $addToSet: { reactions: req.body } },
           { runValidators: true, new: true }
-        );
+        ).select('-__v');
   
         if (!thought) {
           return res.status(404).json({ message: 'No Thought found with this id to add a reaction to!' });
@@ -139,7 +139,7 @@ module.exports = {
           { 
             runValidators: true, 
             new: true }
-        );
+        ).select('-__v');
   
         if (!thought) {
           return res.status(404).json({ message: 'No thought found with this id to delete reaction from!' });

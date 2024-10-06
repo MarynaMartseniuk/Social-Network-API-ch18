@@ -35,7 +35,8 @@ module.exports = {
     async createUser(req, res) {
       try {
         const user = await User.create(req.body);
-        res.json(user);
+        // res.json(user);
+        res.json('a new User was created');
       } catch (err) {
         res.status(500).json(err);
       }
@@ -50,7 +51,7 @@ module.exports = {
           { 
             runValidators: true, 
             new: true }
-        );
+        ).select('-__v');
   
         if (!user) {
           return res.status(404).json({
@@ -70,10 +71,10 @@ module.exports = {
       try {
         const user = await User.findOneAndDelete({ _id: req.params.userId });
 
-        const username1 = user.username;
+        const usernameDel = user.username;
 
         await Thought.deleteMany({
-          username: username1
+          username: usernameDel
         });
   
         if (!user) {
@@ -97,7 +98,7 @@ module.exports = {
             runValidators: true, 
             new: true 
           }
-        );
+        ).select('-__v');
   
         if (!user) {
           return res.status(404).json({ message: 'No User found with this id to add a friend to!' });
@@ -118,7 +119,7 @@ module.exports = {
           { 
             runValidators: true, 
             new: true }
-        );
+        ).select('-__v');
   
         if (!user) {
           return res.status(404).json({ message: 'No user found with this id to delete reaction from!' });
