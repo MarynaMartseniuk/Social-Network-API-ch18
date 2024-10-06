@@ -1,3 +1,4 @@
+// helper function to reformat date data
 function formatDate (date) {
     return date.toLocaleString(
       'en-US', { 
