@@ -1,5 +1,7 @@
 const connection = require('../config/connection');
 const { User, Thought } = require('../models');
+
+// user seeds data for User Model
 const userData = [
   {
     username: 'Sally',
@@ -21,6 +23,7 @@ const userData = [
   },
 ];
 
+// user thoughts and reactions data for Thought Model
 const thoughtData = [
   {
     thoughtText: 'Follow the white rabbit',
@@ -83,29 +86,30 @@ const thoughtData = [
     ]
   },
 ];
-//connection.on('error', (err) => err);
 
+// Seeding
 connection.once('open', async () => {
 
-  // Delete the collections if they exist
+  // Drop the collections if they exist
+  // User Collection
   let usersCheck = await connection.db.listCollections({ name: 'users' }).toArray();
   if (usersCheck.length) {
     await connection.dropCollection('users');
   };
-
+  // Thought Collection
   let thoughtsCheck = await connection.db.listCollections({ name: 'thoughts' }).toArray();
   if (thoughtsCheck.length) {
     await connection.dropCollection('thoughts');
   };
 
-
-
-
+  // seed the User Collection
   await User.insertMany(userData);
   console.log('Users inserted');
 
+  // seed the Thought Collection
   const thoughtResults = await Thought.insertMany(thoughtData);
 
+  // seed the thought array in the User Collection with the thoughts-id data from the Thought Collection
   for (let i = 0; i < thoughtResults.length; i++) {
     let updateUser = await User.findOneAndUpdate(
       { username: thoughtResults[i].username },
@@ -116,7 +120,4 @@ connection.once('open', async () => {
   };
 
 process.exit(0);
-      })
-
-
-
+});

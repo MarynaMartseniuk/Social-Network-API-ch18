@@ -1,5 +1,6 @@
 const { User, Thought } = require('../models');
 
+//routes's functions for User collection
 module.exports = {
     // Get all users
     async getUsers(req, res) {
@@ -18,10 +19,10 @@ module.exports = {
     async getSingleUser(req, res) {
       try {
         const user = await User.findOne({ _id: req.params.userId })
-          .select('-__v');
+        .select('-__v');
   
         if (!user) {
-          return res.status(404).json({ message: 'No user with that ID' })
+          return res.status(404).json({ message: 'No user with this ID to display' })
         }
   
         res.json(user);
@@ -35,8 +36,8 @@ module.exports = {
     async createUser(req, res) {
       try {
         const user = await User.create(req.body);
-        // res.json(user);
-        res.json('a new User was created');
+        res.json(user);
+        //res.json('a new User was created');
       } catch (err) {
         res.status(500).json(err);
       }
@@ -51,11 +52,12 @@ module.exports = {
           { 
             runValidators: true, 
             new: true }
-        ).select('-__v');
+        )
+        .select('-__v');
   
         if (!user) {
           return res.status(404).json({
-            message: 'No user with that ID to update',
+            message: 'No user with this ID to update',
           })
         }
   
@@ -78,7 +80,7 @@ module.exports = {
         });
   
         if (!user) {
-          return res.status(404).json({ message: 'No user with that ID to delete' });
+          return res.status(404).json({ message: 'No user with this ID to delete' });
         }
   
         res.json({ message: 'User successfully deleted' });
@@ -101,7 +103,7 @@ module.exports = {
         ).select('-__v');
   
         if (!user) {
-          return res.status(404).json({ message: 'No User found with this id to add a friend to!' });
+          return res.status(404).json({ message: 'No User found with this ID to add a friend to!' });
         }
   
         res.json(user);
@@ -122,7 +124,7 @@ module.exports = {
         ).select('-__v');
   
         if (!user) {
-          return res.status(404).json({ message: 'No user found with this id to delete reaction from!' });
+          return res.status(404).json({ message: 'No user found with this ID to delete friend from!' });
         }
   
         res.json(user);

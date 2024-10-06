@@ -1,7 +1,7 @@
 const { Schema, model, Types } = require('mongoose');
 const { formatDate } = require('../utils');
 
-// Schema to create Reaction model - subdocument
+// Schema to create Reaction subdocument
 const reactionSchema = new Schema(
   {
     reactionId: {
