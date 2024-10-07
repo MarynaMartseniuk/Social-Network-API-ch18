@@ -83,7 +83,7 @@
    
 ![POST (add) a reaction to one though:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/reactionPOST.jpg)
     
-5.  DELETE a reaction from a thought (by route 'localhost:3001/api/thoughts/:thoughtId/reactions/reactionId'):
+5.  DELETE a reaction from a thought (by route 'localhost:3001/api/thoughts/:thoughtId/reactions/:reactionId'):
     
 ![DELETE a reaction from a thought:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/reactionDELETE.jpg)
 
