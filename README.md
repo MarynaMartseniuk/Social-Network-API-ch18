@@ -72,7 +72,7 @@
 
 2. GET one thought (by route 'localhost:3001/api/thoughts/:thoughtId'):
    
-![GET one thought:]()
+![GET one thought:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/oneThoughtGET.jp)
 
 3. POST (add) one thought (by route 'localhost:3001/api/thoughts' with the body request) and user gets updated:
    
