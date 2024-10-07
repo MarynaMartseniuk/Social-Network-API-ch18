@@ -49,9 +49,9 @@
    
 ![POST (add) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPOST.jpg)
 
-4. POST (add) a freind to one user (by route 'localhost:3001/api/users/:userId/friends' with the body request):
+4. POST (add) a friend to one user (by route 'localhost:3001/api/users/:userId/friends' with the body request):
    
-![POST (add) a freind to one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendPOST.jpg)
+![POST (add) a friend to one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendPOST.jpg)
     
 5.  DELETE one friend from one user (by route 'localhost:3001/api/users/:userId/friends/:friendId'):
     
