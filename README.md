@@ -36,6 +36,65 @@
 6. use "Ctrl+C" to exit the App.
 
 ### run the App will look like this:
+#### Let's work with USER
+1. GET all users (http://localhost:3001/api/users):
+   
+![GET all users:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/usersGET.jpg)
+
+2. GET one user(http://localhost:3001/api/users/:userId):
+   
+![GET one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/oneUserGET.jpg)
+
+3. POST (add) one user (http://localhost:3001/api/users with the body request):
+   
+![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPOST.jpg)
+
+4. POST (add) a freind to one user (http://localhost:3001/api/users/:userId/friends with the body request):
+   
+![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendPOST.jpg)
+    
+5.  DELETE one friend from one user (http://localhost:3001/api/users/:userId/friends/:friendId with the body request):
+    
+![DELETE one friend from one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendDELETE.jpg)
+
+6. PUT (update) one user (http://localhost:3001/api/users/:userId with the body request):
+   
+![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPUT.jpg)
+
+7. DELETE one user (http://localhost:3001/api/users/:userId):
+    
+![DELETE one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userDELETE.jpg)
+
+#### Let's work with THOUGHT
+1. GET all users (http://localhost:3001/api/users):
+   
+![GET all users:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/usersGET.jpg)
+
+2. GET one user(http://localhost:3001/api/users/:userId):
+   
+![GET one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/oneUserGET.jpg)
+
+3. POST (add) one user (http://localhost:3001/api/users with the body request):
+   
+![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPOST.jpg)
+
+4. POST (add) a freind to one user (http://localhost:3001/api/users/:userId/friends with the body request):
+   
+![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendPOST.jpg)
+    
+5.  DELETE one friend from one user (http://localhost:3001/api/users/:userId/friends/:friendId with the body request):
+    
+![DELETE one friend from one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendDELETE.jpg)
+
+6. PUT (update) one user (http://localhost:3001/api/users/:userId with the body request):
+   
+![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPUT.jpg)
+
+7. DELETE one user (http://localhost:3001/api/users/:userId):
+    
+![DELETE one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userDELETE.jpg)
+
+#### EXTRA option: if user got deleted then all related thoughts got deleted as well
 1. GET all users (http://localhost:3001/api/users):
    
 ![GET all users:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/usersGET.jpg)
