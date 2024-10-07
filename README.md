@@ -37,7 +37,7 @@
 
 ### run the App will look like this:
 #### Let's work with USER
-1. GET all users (http://localhost:3001/api/users):
+1. GET all users (by route 'localhost:3001/api/users'):
    
 ![GET all users:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/usersGET.jpg)
 
