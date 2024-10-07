@@ -74,7 +74,7 @@
    
 ![GET one thought:]()
 
-3. POST (add) one thought (by route 'localhost:3001/api/thoughts with the body request' with the body request) and user gets updated:
+3. POST (add) one thought (by route 'localhost:3001/api/thoughts' with the body request) and user gets updated:
    
 ![POST (add) one thought:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/thoughtPOST.jpg)
 ![user gets updated:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/thoughtPOST-user.jpg)
