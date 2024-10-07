@@ -96,19 +96,19 @@
 ![DELETE one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/thoughtDELETE.jpg)
 
 #### EXTRA option: if user got deleted then all related thoughts got deleted as well
-1. GET all users (by route 'localhost:3001/api/users') to choose one to delete:
+1. GET all users (by route 'localhost:3001/api/users') to choose one to delete (let's delete Matt. As for now he has two thoughts posted):
    
 ![GET all users before:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/DELuserDELthoughts_before.jpg)
 
-2. DELETE one user (by route 'localhost:3001/api/users/:userId'):
+2. DELETE one user (by route 'localhost:3001/api/users/:userId') (delete Matt by his userId):
    
 ![DELETE one user process:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/DELuserDELthoughts_userDEL.jpg)
 
-3. GET all users (by route 'localhost:3001/api/users') to check that one got deleted:
+3. GET all users (by route 'localhost:3001/api/users') to check that one got deleted (there is no Matt in User Collection any more):
    
 ![GET all users after:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/DELuserDELthoughts_afterUser.jpg)
 
-4. GET all thoughts (by route 'localhost:3001/api/thoughts') to check that thoughts got deleted with thier user:
+4. GET all thoughts (by route 'localhost:3001/api/thoughts') to check that thoughts got deleted with thier user (there are no Matt's thoughts in Thought Collection any more. There are only thoughts of other users there):
    
 ![GET all thoughts after:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/DELuserDELthoughts_afterThoughts.jpg)
     
