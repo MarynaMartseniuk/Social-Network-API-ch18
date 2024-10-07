@@ -41,89 +41,77 @@
    
 ![GET all users:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/usersGET.jpg)
 
-2. GET one user(http://localhost:3001/api/users/:userId):
+2. GET one user (by route 'localhost:3001/api/users/:userId'):
    
 ![GET one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/oneUserGET.jpg)
 
-3. POST (add) one user (http://localhost:3001/api/users with the body request):
+3. POST (add) one user (by route 'localhost:3001/api/users with the body request' with the body request):
    
 ![POST (add) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPOST.jpg)
 
-4. POST (add) a freind to one user (http://localhost:3001/api/users/:userId/friends with the body request):
+4. POST (add) a freind to one user (by route 'localhost:3001/api/users/:userId/friends' with the body request):
    
 ![POST (add) a freind to one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendPOST.jpg)
     
-5.  DELETE one friend from one user (http://localhost:3001/api/users/:userId/friends/:friendId with the body request):
+5.  DELETE one friend from one user (by route 'localhost:3001/api/users/:userId/friends/:friendId'):
     
 ![DELETE one friend from one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendDELETE.jpg)
 
-6. PUT (update) one user (http://localhost:3001/api/users/:userId with the body request):
+6. PUT (update) one user (by route 'localhost:3001/api/users/:userId' with the body request):
    
 ![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPUT.jpg)
 
-7. DELETE one user (http://localhost:3001/api/users/:userId):
+7. DELETE one user (by route 'localhost:3001/api/users/:userId'):
     
 ![DELETE one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userDELETE.jpg)
 
 #### Let's work with THOUGHT
-1. GET all thoughts (http://localhost:3001/api/thoughts):
+1. GET all thoughts (by route 'localhost:3001/api/thoughts'):
    
 ![GET all thoughts:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/thoughtsGET.jpg)
 
-2. GET one thought (http://localhost:3001/api/thoughts/:thoughtId):
+2. GET one thought (by route 'localhost:3001/api/thoughts/:thoughtId'):
    
 ![GET one thought:]()
 
-3. POST (add) one thought (http://localhost:3001/api/thoughts with the body request) and user gets updated:
+3. POST (add) one thought (by route 'localhost:3001/api/thoughts with the body request' with the body request) and user gets updated:
    
 ![POST (add) one thought:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/thoughtPOST.jpg)
 ![user gets updated:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/thoughtPOST-user.jpg)
 
-4. POST (add) a reaction to one thought (http://localhost:3001/api/thoughts/:thoughtId/reactions with the body request):
+4. POST (add) a reaction to one thought (by route 'localhost:3001/api/thoughts/:thoughtId/reactions' with the body request):
    
 ![POST (add) a reaction to one though:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/reactionPOST.jpg)
     
-5.  DELETE a reaction from a thought (http://localhost:3001/api/thoughts/:thoughtId/reactions/reactionId):
+5.  DELETE a reaction from a thought (by route 'localhost:3001/api/thoughts/:thoughtId/reactions/reactionId'):
     
-![DELETE one friend from one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/reactionDELETE.jpg)
+![DELETE a reaction from a thought:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/reactionDELETE.jpg)
 
-6. PUT (update) one thought (http://localhost:3001/api/thoughts/:thoughtId with the body request):
+6. PUT (update) one thought (by route 'localhost:3001/api/thoughts/:thoughtId' with the body request):
    
 ![PUT (update) one thought :](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/thoughtPUT.jpg)
 
-7. DELETE one thought (http://localhost:3001/apithoughts/:thoughtId):
+7. DELETE one thought (by route 'localhost:3001/apithoughts/:thoughtId'):
     
 ![DELETE one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/thoughtDELETE.jpg)
 
 #### EXTRA option: if user got deleted then all related thoughts got deleted as well
-1. GET all users (http://localhost:3001/api/users):
+1. GET all users (by route 'localhost:3001/api/users') to choose one to delete:
    
-![GET all users:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/usersGET.jpg)
+![GET all users before:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/DELuserDELthoughts_before.jpg)
 
-2. GET one user(http://localhost:3001/api/users/:userId):
+2. DELETE one user (by route 'localhost:3001/api/users/:userId'):
    
-![GET one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/oneUserGET.jpg)
+![DELETE one user process:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/DELuserDELthoughts_userDEL.jpg)
 
-3. POST (add) one user (http://localhost:3001/api/users with the body request):
+3. GET all users (by route 'localhost:3001/api/users') to check that one got deleted:
    
-![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPOST.jpg)
+![GET all users after:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/DELuserDELthoughts_afterUser.jpg)
 
-4. POST (add) a freind to one user (http://localhost:3001/api/users/:userId/friends with the body request):
+4. GET all thoughts (by route 'localhost:3001/api/thoughts') to check that thoughts got deleted with thier user:
    
-![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendPOST.jpg)
+![GET all thoughts after:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/DELuserDELthoughts_afterThoughts.jpg)
     
-5.  DELETE one friend from one user (http://localhost:3001/api/users/:userId/friends/:friendId with the body request):
-    
-![DELETE one friend from one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/friendDELETE.jpg)
-
-6. PUT (update) one user (http://localhost:3001/api/users/:userId with the body request):
-   
-![PUT (update) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPUT.jpg)
-
-7. DELETE one user (http://localhost:3001/api/users/:userId):
-    
-![DELETE one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userDELETE.jpg)
-
 ## Credits
 1. bootcamp UofU, module # 18, activities ## 13, 23, 26, 28
 2. https://mongoosejs.com
