@@ -45,7 +45,7 @@
    
 ![GET one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/oneUserGET.jpg)
 
-3. POST (add) one user (by route 'localhost:3001/api/users with the body request' with the body request):
+3. POST (add) one user (by route 'localhost:3001/api/users' with the body request):
    
 ![POST (add) one user:](https://github.com/MarynaMartseniuk/Social-Network-API-ch18/blob/main/utils/images/userPOST.jpg)
 
